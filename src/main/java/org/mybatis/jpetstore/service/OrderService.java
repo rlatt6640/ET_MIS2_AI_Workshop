@@ -107,6 +107,11 @@ public class OrderService {
   @Transactional
   public Order getOrder(int orderId) {
     Order order = orderMapper.getOrder(orderId);
+
+    if (order == null) {
+      throw new IllegalArgumentException("Order not found: " + orderId);
+    }
+
     order.setLineItems(lineItemMapper.getLineItemsByOrderId(orderId));
 
     order.getLineItems().forEach(lineItem -> {

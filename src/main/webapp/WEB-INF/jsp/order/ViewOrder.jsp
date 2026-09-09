@@ -139,7 +139,7 @@
                                 ${lineItem.item.product.name}
                                 </c:if>
                                 <c:if test="${lineItem.item == null}">
-                                    <i>{description unavailable}</i>
+                                    <i>Item information unavailable</i>
                                 </c:if>
                             </td>
 
