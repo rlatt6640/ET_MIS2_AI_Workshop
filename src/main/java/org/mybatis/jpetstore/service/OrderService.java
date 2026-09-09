@@ -72,6 +72,12 @@ public class OrderService {
    */
   @Transactional
   public void insertOrder(Order order) {
+    order.getLineItems().forEach(lineItem -> {
+      if (lineItem.getQuantity() == null || lineItem.getQuantity() <= 0) {
+        throw new IllegalArgumentException("Order quantity must be greater than 0.");
+      }
+    });
+    
     order.setOrderId(getNextId("ordernum"));
     order.getLineItems().forEach(lineItem -> {
       String itemId = lineItem.getItemId();
