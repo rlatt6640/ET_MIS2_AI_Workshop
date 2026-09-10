@@ -22,7 +22,7 @@
     <p class="subtitle" style="color: #666; margin-bottom: 20px;">Update your password and personal details below.</p>
 
     <form method="post" action="${pageContext.request.contextPath}/account/edit" id="accountForm">
-        <%-- CSRF 보호 토큰 추가 (필요 시) --%>
+
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         <input type="hidden" name="username" value="${account.username}" />
 
