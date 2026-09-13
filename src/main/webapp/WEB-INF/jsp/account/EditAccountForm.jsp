@@ -70,6 +70,18 @@
         var repeatPwd = document.getElementById('repeatedPassword').value;
 
     })();
+        // 실시간 입력 확인
+    pwd.addEventListener('input', validatePassword);
+        repeatPwd.addEventListener('input', validatePassword);
+
+        form.addEventListener('submit', function(e) {
+            if (!validatePassword()) {
+                e.preventDefault();
+                repeatPwd.focus();
+            }
+        });
+    })();
+
 </script>
 
 <%@ include file="../common/IncludeBottom.jsp"%>
