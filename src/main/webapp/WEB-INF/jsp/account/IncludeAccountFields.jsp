@@ -19,7 +19,7 @@
 
 <table>
     <tr>
-        <td>First name1:</td>
+        <td>First name:</td>
         <td><input type="text" name="firstName" value="${account.firstName}" /></td>
     </tr>
     <tr>
